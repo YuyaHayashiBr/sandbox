@@ -10,7 +10,9 @@
 if( location.host === "localhost:1080" )
 {
   var elm = document.getElementById('mark');
-  elm.style.display = null;
+  //elm.style.display = null; // "display"はIEで対応していないため"visibility"を使用
+  elm.style.visibility = "visible";
+  elm.style.height = "50px"; // "visibility"だけだと領域だけは残っているので、"height"もあとで設定するようにする
   // マークを付けたい(先頭からの)パスを指定する
   // 例) localhost:1080/aaa/  =>  /aaa/
   if( location.pathname.indexOf("/aaa/") === 0 )
